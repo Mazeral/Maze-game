@@ -25,5 +25,6 @@ const int maze[10][10] = {
     {WALL, PATH, WALL, WALL, PATH, WALL, WALL, PATH, WALL, WALL},
     {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL}
 };
-void window();
+int window();
+void gameloop();
 #endif
