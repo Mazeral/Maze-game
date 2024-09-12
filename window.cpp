@@ -46,6 +46,8 @@ int window()
 		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 		SDL_RenderClear(renderer);
 		draw_maze(renderer);
+		/* Ray casting!*/
+		rayCasting(renderer, player, mazeWidth, mazeHeight, mazeCellSize);
 		/* Draw the player in black */
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderFillRect(renderer, &player);
