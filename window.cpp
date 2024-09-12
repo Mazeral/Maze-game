@@ -26,98 +26,38 @@ int window()
 	/* Created our window, defined the size and the pos on the screen*/
 	window = create_window();
 	/* renderer is an essential component that plays a crucial
-	 * role in rendering graphics, text, and other visual elements on the screen.*/
+	* role in rendering graphics, text, and other visual elements on the screen.*/
 	renderer = create_renderer(window);
 
 
 	// Main loop
-	while (running) {
-	    while (SDL_PollEvent(&event)) {
-		if (event.type == SDL_QUIT) {
-		    running = false;
+	while (running)
+	{
+		while (SDL_PollEvent(&event))
+		{
+			if (event.type == SDL_QUIT) {
+			    running = false;
+			}
 		}
-	    }
+		/* Handles the movement and collusion */
+		move(&player, playerSpeed);
 
-	    // Get the current key state
-	    const Uint8* keystates = SDL_GetKeyboardState(NULL);
-
-	    // Move the player based on the key state
-	    if (keystates[SDL_SCANCODE_UP]) {
-		player.y -= playerSpeed;
-	    }
-	    if (keystates[SDL_SCANCODE_DOWN]) {
-		player.y += playerSpeed;
-	    }
-	    if (keystates[SDL_SCANCODE_LEFT]) {
-		player.x -= playerSpeed;
-	    }
-	    if (keystates[SDL_SCANCODE_RIGHT]) {
-		player.x += playerSpeed;
-	    }
-
-	    // Ensure the player stays within the window boundaries
-	    if (player.x < 0) {
-		player.x = 0;
-	    }
-	    if (player.y < 0) {
-		player.y = 0;
-	    }
-	    if (player.x + player.w > 640) {
-		player.x = 640 - player.w;
-	    }
-	    if (player.y + player.h > 480) {
-		player.y = 480 - player.h;
-	    }
-
-	    // Check for collisions with the maze
-	    int mazeX = player.x / mazeCellSize;
-	    int mazeY = player.y / mazeCellSize;
-	    if (mazeY < mazeHeight && mazeX < mazeWidth && maze[mazeY][mazeX] == 1) {
-		// If the player collides with a wall, move them back
-		if (keystates[SDL_SCANCODE_UP]) {
-		    player.y += playerSpeed;
-		}
-		if (keystates[SDL_SCANCODE_DOWN]) {
-		    player.y -= playerSpeed;
-		}
-		if (keystates[SDL_SCANCODE_LEFT]) {
-		    player.x += playerSpeed;
-		}
-		if (keystates[SDL_SCANCODE_RIGHT]) {
-		    player.x -= playerSpeed;
-		}
-	    }
-
-	    // Clear the screen
-	    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // white
-	    SDL_RenderClear(renderer);
-
-	    // Draw the maze
-	    for (int y = 0; y < mazeHeight; y++) {
-		for (int x = 0; x < mazeWidth; x++) {
-		    if (maze[y][x] == 1) {
-			SDL_Rect wall = { x * mazeCellSize, y * mazeCellSize, mazeCellSize, mazeCellSize };
-			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // black
-			SDL_RenderFillRect(renderer, &wall);
-		    }
-		}
-	    }
-
-	    // Draw the player
-	    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // black
-	    SDL_RenderFillRect(renderer, &player);
-
-	    // Update the screen
-	    SDL_RenderPresent(renderer);
-
-	    // Cap the frame rate
-	    SDL_Delay(1000 / 60);
+		/* Clear the screen in white color */
+		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+		SDL_RenderClear(renderer);
+		draw_maze(renderer);
+		/* Draw the player in black */
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_RenderFillRect(renderer, &player);
+		/* Update the screen */
+		SDL_RenderPresent(renderer);
+		/* Cap the frame rate */
+		SDL_Delay(1000 / 60);
 	}
 
-    // Clean up
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
-    SDL_Quit();
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
+	SDL_Quit();
 
     return 0;
 }
