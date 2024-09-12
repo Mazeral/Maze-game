@@ -5,25 +5,24 @@ void handleMovement(SDL_Rect* player, int playerSpeed, const Uint8* keystates)
 	int mazeX = player->x / mazeCellSize;
 	int mazeY = player->y / mazeCellSize;
 
-	if (keystates[SDL_SCANCODE_UP])
-		player->y -= playerSpeed;
-	if (keystates[SDL_SCANCODE_DOWN])
-		player->y += playerSpeed;
-	if (keystates[SDL_SCANCODE_LEFT])
-		player->x -= playerSpeed;
-	if (keystates[SDL_SCANCODE_RIGHT])
-		player->x += playerSpeed;
+	int newX = player->x;
+	int newY = player->y;
 
-
-	if (mazeY < 0 || mazeX < 0 || mazeY >= mazeHeight || mazeX >= mazeWidth || maze[mazeY][mazeX] == 1) {
 	if (keystates[SDL_SCANCODE_UP])
-		player->y += playerSpeed;
+		newY -= playerSpeed;
 	if (keystates[SDL_SCANCODE_DOWN])
-		player->y -= playerSpeed;
+		newY += playerSpeed;
 	if (keystates[SDL_SCANCODE_LEFT])
-		player->x += playerSpeed;
+		newX -= playerSpeed;
 	if (keystates[SDL_SCANCODE_RIGHT])
-		player->x -= playerSpeed;
+		newX += playerSpeed;
+
+	int newMazeX = newX / mazeCellSize;
+	int newMazeY = newY / mazeCellSize;
+
+	if (!(newMazeY < 0 || newMazeX < 0 || newMazeY >= mazeHeight || newMazeX >= mazeWidth || maze[newMazeY][newMazeX] == 1)) {
+		player->x = newX;
+		player->y = newY;
 	}
 }
 
