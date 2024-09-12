@@ -8,14 +8,36 @@ void handleMovement(SDL_Rect* player, int playerSpeed, const Uint8* keystates)
 	int newX = player->x;
 	int newY = player->y;
 
+	int mouseX, mouseY;
+	SDL_GetMouseState(&mouseX, &mouseY);
+
 	if (keystates[SDL_SCANCODE_UP])
-		newY -= playerSpeed;
+	{
+		// Move forward in the direction the player is looking
+		float rayAngle = (mouseX - 320) * 0.01f;
+		newX += cos(rayAngle) * playerSpeed;
+		newY += sin(rayAngle) * playerSpeed;
+	}
+
 	if (keystates[SDL_SCANCODE_DOWN])
-		newY += playerSpeed;
+	{
+		// Move backward in the direction the player is looking
+		float rayAngle = (mouseX - 320) * 0.01f;
+		newX -= cos(rayAngle) * playerSpeed;
+		newY -= sin(rayAngle) * playerSpeed;
+	}
+
 	if (keystates[SDL_SCANCODE_LEFT])
+	{
+		// Move left
 		newX -= playerSpeed;
+	}
+
 	if (keystates[SDL_SCANCODE_RIGHT])
+	{
+		// Move right
 		newX += playerSpeed;
+	}
 
 	int newMazeX = newX / mazeCellSize;
 	int newMazeY = newY / mazeCellSize;

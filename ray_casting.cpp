@@ -45,6 +45,10 @@ void rayCasting(SDL_Renderer* renderer, SDL_Rect player, int mazeWidth, int maze
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderFillRect(renderer, &wallRect);
 
+        // Draw the ray
+        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+        SDL_RenderDrawLine(renderer, player.x, player.y, rayX, rayY);
+
         // Get the current mouse position
         SDL_GetMouseState(&mouseX, &mouseY);
 

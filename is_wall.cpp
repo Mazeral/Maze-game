@@ -1,4 +1,5 @@
 #include "main.h"
+
 bool isWall(int x, int y) 
 {
     // Replace this with your actual maze data
