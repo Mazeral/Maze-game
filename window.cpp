@@ -9,41 +9,28 @@ int window()
 {
 	int mazeWidth = 10;
 	int mazeHeight = 10;
-    // Initialize SDL
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Could not initialize SDL: %s", SDL_GetError());
-        return 1;
-    }
-
-    // Create a window
-    SDL_Window* window = SDL_CreateWindow("Maze Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN);
-    if (!window) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Could not create window: %s", SDL_GetError());
-        SDL_Quit();
-        return 1;
-    }
-
-    // Create a renderer
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    if (!renderer) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Could not create renderer: %s", SDL_GetError());
-        SDL_DestroyWindow(window);
-        SDL_Quit();
-        return 1;
-    }
-
+	SDL_Window *window = NULL;
+	SDL_Renderer* renderer = NULL;
 	// Define the player's position and size
 	SDL_Rect player = { 100, 100, 10, 10 }; // x, y, width, height
-
 	// Define the player's speed
 	const int playerSpeed = 5;
-
 	// Define the maze cell size
 	const int mazeCellSize = 32;
+	bool running = true;
+	/* The variables that handles our events */
+	SDL_Event event;
+
+	/* Initialized SDL*/
+	sdl_init();
+	/* Created our window, defined the size and the pos on the screen*/
+	window = create_window();
+	/* renderer is an essential component that plays a crucial
+	 * role in rendering graphics, text, and other visual elements on the screen.*/
+	renderer = create_renderer(window);
+
 
 	// Main loop
-	bool running = true;
-	SDL_Event event;
 	while (running) {
 	    while (SDL_PollEvent(&event)) {
 		if (event.type == SDL_QUIT) {
