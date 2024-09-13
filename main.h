@@ -12,6 +12,7 @@
  * 0 represents the spaces in the maze
  */
 
+extern float rayAngle; // Global variable to store the current rotation angle
 const int mazeWidth = 10;
 const int mazeHeight = 10;
 const int mazeCellSize = 32;
@@ -32,8 +33,8 @@ void gameloop();
 int sdl_init();
 SDL_Window* create_window();
 SDL_Renderer* create_renderer(SDL_Window *);
-void move(SDL_Rect* player, int playerSpeed);
+void move(SDL_Rect* player, int playerSpeed, float);
 void draw_maze(SDL_Renderer *renderer);
-void rayCasting(SDL_Renderer* renderer, SDL_Rect player, int mazeWidth, int mazeHeight, int mazeCellSize);
+float rayCasting(SDL_Renderer* renderer, SDL_Rect player, int mazeWidth, int mazeHeight, int mazeCellSize);
 bool isWall(int x, int y);
 #endif
