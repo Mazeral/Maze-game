@@ -6,7 +6,7 @@
  */
 SDL_Texture* loadFloor(SDL_Renderer* renderer)
 {
-	SDL_Surface* floorSurface = SDL_LoadBMP("floor.bmp");
+	SDL_Surface* floorSurface = SDL_LoadBMP("../depedencies/floor.bmp");
 	SDL_Texture* floorTexture = SDL_CreateTextureFromSurface(renderer, floorSurface);
 	if (floorSurface == NULL)
 	{

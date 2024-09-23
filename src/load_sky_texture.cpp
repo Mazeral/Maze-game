@@ -11,7 +11,7 @@ SDL_Texture *load_sky_texture(SDL_Renderer *renderer)
 	SDL_Texture *sky_texture;
 
 	/* Load sky image */
-	sky_surface = IMG_Load("sky.bmp");
+	sky_surface = IMG_Load("../depedencies/sky.bmp");
 	if (!sky_surface)
 	{
 		printf("Error loading sky texture: %s\n", IMG_GetError());

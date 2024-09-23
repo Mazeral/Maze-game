@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * load_floor_texture - Loads the floor texture into memory
  * @renderer: The SDL renderer to use for loading the texture
@@ -11,7 +12,7 @@ SDL_Texture *load_floor_texture(SDL_Renderer *renderer)
 	SDL_Texture *floor_texture;
 
 	/* Load floor image */
-	floor_surface = IMG_Load("floor.bmp");
+	floor_surface = IMG_Load("../depedencies/floor.bmp");
 	if (!floor_surface)
 	{
 		printf("Error loading floor texture: %s\n", SDL_GetError());

@@ -47,7 +47,7 @@ float ray_casting(SDL_Renderer *renderer, SDL_Rect player, int mazeWidth, int ma
         if (wall_height > WINDOW_HEIGHT / 1.25)
             wall_height = WINDOW_HEIGHT / 1.25;
 
-	draw_ray(renderer, player, hitX, hitY, rayDistance);
+	// draw_ray(renderer, player, hitX, hitY, rayDistance);
 
     draw_wall(renderer, wall_texture, wall_height, i);
     }

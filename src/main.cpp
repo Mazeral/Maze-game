@@ -37,7 +37,7 @@ int main(void)
 	renderer = create_renderer(window);
 
 	/* Load the wall texture */
-	wall_texture = load_wall_texture(renderer, "wall.bmp");
+	wall_texture = load_wall_texture(renderer, "../depedencies/wall.bmp");
 	if (!wall_texture)
 	{
 		printf("Failed to load wall texture.\n");
@@ -62,7 +62,7 @@ int main(void)
 
 		/* Draw the sky at the top */
 		draw_sky(renderer, sky);
-		draw_maze(renderer ,player);
+		// draw_maze(renderer ,player);
 		    draw_floor(renderer, floor, player);
 
 		/* Draw the floor at the bottom */
