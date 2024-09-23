@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -o maze.exe *.cpp *.h -lSDL2 -lm -lSDL2_image
