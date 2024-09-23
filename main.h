@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_surface.h>
 #include <SDL2/SDL_video.h>
@@ -64,4 +65,7 @@ void calculate_ray_distance(float current_angle, SDL_Rect player, int mazeWidth,
 float calculate_floor_distance(float current_angle, SDL_Rect player, int mazeWidth, int mazeHeight, int mazeCellSize);
 void draw_ray(SDL_Renderer *renderer, SDL_Rect player, float hitX, float hitY, float rayDistance);
 bool game_running(SDL_Rect player, const Uint8* keystates);
+void welcome_screen(SDL_Renderer* renderer);
+void game_won_screen(SDL_Renderer* renderer);
+
 #endif

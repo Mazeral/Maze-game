@@ -12,7 +12,6 @@ bool game_running(SDL_Rect player, const Uint8* keystates)
     } else if (keystates[SDL_SCANCODE_RIGHT]) {
         player.x += 10;
     }
-    printf("Player x: %d\n player y: %d\n", player.x/32, player.y/32);
 
     // Check if the player has reached the end of the map
     if (player.x >= 18 * mazeCellSize && player.y >= 18 * mazeCellSize) {

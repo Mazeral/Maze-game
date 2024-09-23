@@ -1,5 +1,6 @@
 #include "main.h"
 #include <SDL2/SDL_keyboard.h>
+#include <SDL2/SDL_render.h>
 float floor_scroll_offset_x = 0.0f;
 float floor_scroll_offset_y = 0.0f;
 /**
@@ -16,7 +17,6 @@ int main(void)
 	/* Define the player's speed */
 	const int playerSpeed = 5;
 	/* Define the maze cell size */
-	const int mazeCellSize = 32;
 	/* The state of the game */
 	bool running = true;
 	/* The variables that handle our events */
@@ -46,7 +46,10 @@ int main(void)
 
 	/* Load the floor and sky texture once */
 	sky = load_sky_texture(renderer);
-	floor = load_floor_texture(renderer);
+	    // Load the font
+	welcome_screen(renderer);
+    // Display the welcoming screen
+    floor = load_floor_texture(renderer);
 
 	/* The game loop */
 	while (running)
@@ -76,7 +79,10 @@ int main(void)
 		/* Cap the frame rate */
 		SDL_Delay(1000 / 60);
 		if (game_running(player, keystates) == false)
+		{
 			running = game_running(player, keystates);
+			game_won_screen(renderer);
+		}
 	}
 
 	/* Cleanup */
