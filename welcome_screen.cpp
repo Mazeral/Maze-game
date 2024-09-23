@@ -13,7 +13,7 @@ void welcome_screen(SDL_Renderer* renderer) {
     SDL_RenderClear(renderer);
 
     // Define the white rectangle dimensions
-    int rect_width = 400;
+    int rect_width = 600;
     int rect_height = 200;
 
     // Center the white rectangle
@@ -70,7 +70,7 @@ void welcome_screen(SDL_Renderer* renderer) {
     SDL_RenderPresent(renderer);
 
     // Wait for 2 seconds
-    SDL_Delay(2000);
+    SDL_Delay(4000);
 
     // Clean up resources
     SDL_DestroyTexture(textTexture);
