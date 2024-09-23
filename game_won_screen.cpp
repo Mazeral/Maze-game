@@ -19,7 +19,7 @@ void game_won_screen(SDL_Renderer* renderer) {
     SDL_Color textColor = { 0, 0, 0 }; // Define the text color as black
     SDL_Surface* textSurface = TTF_RenderText_Solid(font, "You won!", textColor);
     SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
-    SDL_Rect textRect2 = { 200, 200, textSurface->w, textSurface->h };
+    SDL_Rect textRect2 = { (WINDOW_WIDTH - textSurface->w) / 2, (WINDOW_HEIGHT - textSurface->w) / 2, textSurface->w, textSurface->h };
     SDL_RenderCopy(renderer, textTexture, NULL, &textRect2);
     SDL_RenderPresent(renderer);
     SDL_Delay(4000);
