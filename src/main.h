@@ -37,7 +37,7 @@ const int maze[MAZE_WIDTH][MAZE_HEIGHT] = {
 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 }
 };
 int sdl_init(void);
-SDL_Window *create_window();
+SDL_Window *create_window(void);
 SDL_Renderer *create_renderer(SDL_Window *);
 void move(SDL_Rect *player, int playerSpeed, float ray_angle);
 void draw_maze(SDL_Renderer *renderer, SDL_Rect player);
