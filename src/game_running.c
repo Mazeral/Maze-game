@@ -13,33 +13,11 @@
  */
 bool game_running(SDL_Rect *player, const Uint8 *keystates)
 {
-	/* Update the player's position based on user input */
-	if (keystates[SDL_SCANCODE_UP])
-	{
-		if (player->y - 10 < 32);
-		else
-			player->y -= 10;
-	}
-	else if (keystates[SDL_SCANCODE_DOWN])
-	{
-		player->y += 10;
-	}
-	else if (keystates[SDL_SCANCODE_LEFT])
-	{
-		player->x -= 10;
-	}
-	else if (keystates[SDL_SCANCODE_RIGHT])
-	{
-		player->x += 10;
-	}
-
 	/* Check if the player has reached the end of the map */
 	if (player->x >= 18 * MAZE_CELL_SIZE && player->y >= 18 * MAZE_CELL_SIZE)
 	{
 		/* Game over, player has reached the end of the map */
 		return (false);
 	}
-
-	printf("Player x: %d\nPlayer y:%d\n", player->x, player->y);
 	return (true);
 }

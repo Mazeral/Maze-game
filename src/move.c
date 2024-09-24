@@ -18,6 +18,7 @@ void handleMovement(SDL_Rect player, int playerSpeed,
 	if (keystates[SDL_SCANCODE_UP])
 	{
 		/* Move forward towards the ray casted */
+		printf("Moving forward... x,y: %d,%d\n", player.x, player.y);
 		newX += cos(ray_angle) * playerSpeed;
 		newY += sin(ray_angle) * playerSpeed;
 	}
@@ -37,6 +38,7 @@ void handleMovement(SDL_Rect player, int playerSpeed,
 	      newMazeY >= MAZE_HEIGHT || newMazeX >= MAZE_WIDTH ||
 	      maze[newMazeY][newMazeX] == 1))
 	{
+		printf("New x and y: %d,%d\n", player.x, player.y);
 		player.x = newX;
 		player.y = newY;
 	}
