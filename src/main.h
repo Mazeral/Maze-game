@@ -57,6 +57,7 @@ bool isWall(int x, int y);
 void draw_floor(SDL_Renderer *renderer, SDL_Texture *floor_texture, SDL_Rect player);
 SDL_Texture *load_floor_texture(SDL_Renderer *renderer);
 SDL_Texture *load_sky_texture(SDL_Renderer *renderer);
+SDL_Texture* loadFloor(SDL_Renderer* renderer);
 void draw_sky(SDL_Renderer *renderer, SDL_Texture *sky_texture);
 void draw_wall(SDL_Renderer *renderer, SDL_Texture *wall_texture, float wall_height, int i);
 SDL_Texture *load_wall_texture(SDL_Renderer *renderer, const char *file_path);

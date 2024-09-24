@@ -1,6 +1,6 @@
 #include "main.h"
 
-SDL_Window* create_window()
+SDL_Window *create_window()
 {
     /**
      * The SDL_CreateWindow function is a crucial part
@@ -13,10 +13,16 @@ SDL_Window* create_window()
      * By using SDL_WINDOW_SHOWN, we're telling SDL to make
      * the window visible and show it on the screen immediately after creation
      */
-	SDL_Window* window = SDL_CreateWindow("Maze Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
+	SDL_Window *window = SDL_CreateWindow("Maze Game",
+				       SDL_WINDOWPOS_CENTERED,
+				       SDL_WINDOWPOS_CENTERED,
+				       WINDOW_WIDTH,
+				       WINDOW_HEIGHT,
+				       SDL_WINDOW_SHOWN);
 	if (!window)
 	{
-		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Could not create window: %s", SDL_GetError());
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
+	       "Could not create window: %s", SDL_GetError());
 		SDL_Quit();
 		return (NULL);
 	}

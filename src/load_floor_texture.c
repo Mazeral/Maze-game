@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * load_floor_texture - Loads the floor texture into memory
- * @renderer: The SDL renderer to use for loading the texture
+ * load_floor_texture - Loads the floor texture from an image file
+ * @renderer: The SDL renderer to create the texture
  *
- * Return: SDL_Texture* (the loaded texture) or NULL on error
+ * Return: A pointer to the loaded SDL_Texture, or NULL on failure
  */
 SDL_Texture *load_floor_texture(SDL_Renderer *renderer)
 {
@@ -21,7 +21,7 @@ SDL_Texture *load_floor_texture(SDL_Renderer *renderer)
 
 	/* Create texture from surface */
 	floor_texture = SDL_CreateTextureFromSurface(renderer, floor_surface);
-	SDL_FreeSurface(floor_surface);  /* Free the surface as it's no longer needed */
+	SDL_FreeSurface(floor_surface); /* Free the surface as it's no longer needed*/
 
 	if (!floor_texture)
 	{
