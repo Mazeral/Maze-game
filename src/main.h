@@ -65,5 +65,5 @@ void draw_ray(SDL_Renderer *renderer, SDL_Rect player,
 bool game_running(SDL_Rect player, const Uint8 *keystates);
 void welcome_screen(SDL_Renderer *renderer);
 void game_won_screen(SDL_Renderer *renderer);
-
+float wrap_angle(float angle);
 #endif
