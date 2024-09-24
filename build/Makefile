@@ -129,77 +129,29 @@ Maze/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/build
 .PHONY : Maze/fast
 
-src/calculate_floor_distance.o: src/calculate_floor_distance.c.o
-.PHONY : src/calculate_floor_distance.o
+src/clear_renderer.o: src/clear_renderer.c.o
+.PHONY : src/clear_renderer.o
 
 # target to build an object file
-src/calculate_floor_distance.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/calculate_floor_distance.c.o
-.PHONY : src/calculate_floor_distance.c.o
+src/clear_renderer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/clear_renderer.c.o
+.PHONY : src/clear_renderer.c.o
 
-src/calculate_floor_distance.i: src/calculate_floor_distance.c.i
-.PHONY : src/calculate_floor_distance.i
-
-# target to preprocess a source file
-src/calculate_floor_distance.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/calculate_floor_distance.c.i
-.PHONY : src/calculate_floor_distance.c.i
-
-src/calculate_floor_distance.s: src/calculate_floor_distance.c.s
-.PHONY : src/calculate_floor_distance.s
-
-# target to generate assembly for a file
-src/calculate_floor_distance.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/calculate_floor_distance.c.s
-.PHONY : src/calculate_floor_distance.c.s
-
-src/calculate_ray_distance.o: src/calculate_ray_distance.c.o
-.PHONY : src/calculate_ray_distance.o
-
-# target to build an object file
-src/calculate_ray_distance.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/calculate_ray_distance.c.o
-.PHONY : src/calculate_ray_distance.c.o
-
-src/calculate_ray_distance.i: src/calculate_ray_distance.c.i
-.PHONY : src/calculate_ray_distance.i
+src/clear_renderer.i: src/clear_renderer.c.i
+.PHONY : src/clear_renderer.i
 
 # target to preprocess a source file
-src/calculate_ray_distance.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/calculate_ray_distance.c.i
-.PHONY : src/calculate_ray_distance.c.i
+src/clear_renderer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/clear_renderer.c.i
+.PHONY : src/clear_renderer.c.i
 
-src/calculate_ray_distance.s: src/calculate_ray_distance.c.s
-.PHONY : src/calculate_ray_distance.s
-
-# target to generate assembly for a file
-src/calculate_ray_distance.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/calculate_ray_distance.c.s
-.PHONY : src/calculate_ray_distance.c.s
-
-src/clean_renderer.o: src/clean_renderer.c.o
-.PHONY : src/clean_renderer.o
-
-# target to build an object file
-src/clean_renderer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/clean_renderer.c.o
-.PHONY : src/clean_renderer.c.o
-
-src/clean_renderer.i: src/clean_renderer.c.i
-.PHONY : src/clean_renderer.i
-
-# target to preprocess a source file
-src/clean_renderer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/clean_renderer.c.i
-.PHONY : src/clean_renderer.c.i
-
-src/clean_renderer.s: src/clean_renderer.c.s
-.PHONY : src/clean_renderer.s
+src/clear_renderer.s: src/clear_renderer.c.s
+.PHONY : src/clear_renderer.s
 
 # target to generate assembly for a file
-src/clean_renderer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/clean_renderer.c.s
-.PHONY : src/clean_renderer.c.s
+src/clear_renderer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Maze.dir/build.make CMakeFiles/Maze.dir/src/clear_renderer.c.s
+.PHONY : src/clear_renderer.c.s
 
 src/create_renderer.o: src/create_renderer.c.o
 .PHONY : src/create_renderer.o
@@ -738,15 +690,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Maze"
-	@echo "... src/calculate_floor_distance.o"
-	@echo "... src/calculate_floor_distance.i"
-	@echo "... src/calculate_floor_distance.s"
-	@echo "... src/calculate_ray_distance.o"
-	@echo "... src/calculate_ray_distance.i"
-	@echo "... src/calculate_ray_distance.s"
-	@echo "... src/clean_renderer.o"
-	@echo "... src/clean_renderer.i"
-	@echo "... src/clean_renderer.s"
+	@echo "... src/clear_renderer.o"
+	@echo "... src/clear_renderer.i"
+	@echo "... src/clear_renderer.s"
 	@echo "... src/create_renderer.o"
 	@echo "... src/create_renderer.i"
 	@echo "... src/create_renderer.s"
