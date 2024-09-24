@@ -90,7 +90,7 @@ void welcome_screen(SDL_Renderer *renderer)
 	/* Draw the white rectangle */
 	draw_white_rectangle(renderer);
 	/* Load the font */
-	font = TTF_OpenFont("Tiny5-Regular.ttf", 40);
+	font = TTF_OpenFont("../depedencies/Tiny5-Regular.ttf", 40);
 	if (font == NULL)
 	{
 		printf("TTF_OpenFont error: %s\n", TTF_GetError());
