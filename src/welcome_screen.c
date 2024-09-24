@@ -78,7 +78,7 @@ void welcome_screen(SDL_Renderer *renderer)
 	SDL_Surface *textSurface = NULL;
 	SDL_Texture *textTexture = NULL;
 	TTF_Font *font = NULL;
-	SDL_Color textColor = {0, 0, 0};
+	SDL_Color textColor = {0, 0, 0, 0};
 	SDL_Rect textRect;
 
 	/* Initialize SDL_ttf */

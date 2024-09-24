@@ -10,8 +10,6 @@
 void handleMovement(SDL_Rect *player, int playerSpeed,
 		    const Uint8 *keystates, float ray_angle)
 {
-	int mazeX = player->x / MAZE_CELL_SIZE;
-	int mazeY = player->y / MAZE_CELL_SIZE;
 	int newX = player->x;
 	int newY = player->y;
 

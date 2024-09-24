@@ -9,6 +9,7 @@
  * simulating a left rotation. If the right arrow is pressed, the ray angle
  * increases, simulating a right rotation. The angle is wrapped to stay
  * within the range of 0 to 2π.
+ * Return: The updated ray angle
  */
 float update_ray_angle(const Uint8 *keystates, float ray_angle)
 {

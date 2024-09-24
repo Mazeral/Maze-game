@@ -69,7 +69,7 @@ void game_won_screen(SDL_Renderer *renderer)
 {
 	const int rect_width = 600;
 	const int rect_height = 200;
-	SDL_Color text_color = {0, 0, 0}; /* Define the text color as black */
+	SDL_Color text_color = {0, 0, 0, 0}; /* Define the text color as black */
 	TTF_Font *font = TTF_OpenFont("../depedencies/Tiny5-Regular.ttf", 40);
 
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
