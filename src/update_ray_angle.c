@@ -10,25 +10,26 @@
  * increases, simulating a right rotation. The angle is wrapped to stay
  * within the range of 0 to 2π.
  */
-void update_ray_angle(const Uint8 *keystates, float *ray_angle)
+float update_ray_angle(const Uint8 *keystates, float ray_angle)
 {
 	float rotation_speed = 0.05f;  /* Adjust rotation speed as needed */
 
 	if (keystates[SDL_SCANCODE_LEFT])
 	{
-		*ray_angle -= rotation_speed;
-		if (*ray_angle < 0)
+		ray_angle -= rotation_speed;
+		if (ray_angle < 0)
 		{
-			*ray_angle += 2 * M_PI;  /* Wrap around */
+			ray_angle += 2 * M_PI;  /* Wrap around */
 		}
 	}
 
 	if (keystates[SDL_SCANCODE_RIGHT])
 	{
-		*ray_angle += rotation_speed;
-		if (*ray_angle >= 2 * M_PI)
+		ray_angle += rotation_speed;
+		if (ray_angle >= 2 * M_PI)
 		{
-			*ray_angle -= 2 * M_PI;  /* Wrap around */
+			ray_angle -= 2 * M_PI;  /* Wrap around */
 		}
 	}
+	return (ray_angle);
 }

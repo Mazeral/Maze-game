@@ -42,9 +42,9 @@ SDL_Window *create_window(void);
 SDL_Renderer *create_renderer(SDL_Window *);
 void move(SDL_Rect *player, int playerSpeed, float ray_angle);
 void draw_maze(SDL_Renderer *renderer, SDL_Rect player);
-float ray_casting(SDL_Renderer *renderer, SDL_Rect player,
+void ray_casting(SDL_Renderer *renderer, SDL_Rect player,
 		  int maze_width, int maze_height, int mazeCellSize,
-		  SDL_Texture *wall_texture, float ray_angle);
+		  SDL_Texture *wall_texture, float *ray_angle);
 bool isWall(int x, int y);
 void draw_floor(SDL_Renderer *renderer,
 		SDL_Texture *floor_texture, SDL_Rect player);
@@ -55,7 +55,7 @@ void draw_sky(SDL_Renderer *renderer, SDL_Texture *sky_texture);
 void draw_wall(SDL_Renderer *renderer, SDL_Texture *wall_texture,
 		float wall_height, int i);
 SDL_Texture *load_wall_texture(SDL_Renderer *renderer, const char *file_path);
-void update_ray_angle(const Uint8 *keystates, float *ray_angle);
+float update_ray_angle(const Uint8 *keystates, float ray_angle);
 void calculate_ray_distance(float current_angle, SDL_Rect player,
 		int maze_width, int maze_height, int mazeCellSize,
 		float *rayDistance, float *hitX, float *hitY, int *hitSide);

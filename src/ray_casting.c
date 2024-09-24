@@ -52,15 +52,16 @@ void calculate_ray_distance(float current_angle, SDL_Rect player,
  * @maze_height: The height of the maze.
  * @mazeCellSize: The size of each maze cell.
  * @wall_texture: The texture to use for the walls.
+ * @ray_angle: The angle of the rays
  * Return: The updated angle of the ray after processing input.
  */
-float ray_casting(SDL_Renderer *renderer, SDL_Rect player,
+void ray_casting(SDL_Renderer *renderer, SDL_Rect player,
 		  int maze_width, int maze_height, int mazeCellSize,
-		  SDL_Texture *wall_texture, float ray_angle)
+		  SDL_Texture *wall_texture, float *ray_angle)
 {
 	float fov = 60.0f * (3.14159f / 180.0f),
 	ray_angle_increment = fov / NUM_RAYS,
-	initial_ray_angle = ray_angle - (fov / 2.0f),
+	initial_ray_angle = *ray_angle - (fov / 2.0f),
 	floor_distance = 0.0f, floor_distances[NUM_RAYS], current_angle,
 	rayDistance, hitX, hitY, wall_height;
 	const Uint8 *keystates = SDL_GetKeyboardState(NULL);
@@ -89,7 +90,5 @@ float ray_casting(SDL_Renderer *renderer, SDL_Rect player,
 	}
 
 	/* Update ray angle based on input */
-	update_ray_angle(keystates, &ray_angle);
-
-	return (ray_angle);
+	*ray_angle = update_ray_angle(keystates, *ray_angle);
 }
