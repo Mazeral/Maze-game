@@ -72,4 +72,5 @@ void calculate_ray_distance(float current_angle, SDL_Rect player,
 			    int mazeWidth, int mazeHeight,
 			    int mazeCellSize, float *rayDistance,
 			    float *hitX, float *hitY, int *hitSide);
+void clear_renderer(SDL_Renderer *renderer);
 #endif
