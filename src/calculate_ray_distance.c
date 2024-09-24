@@ -3,8 +3,8 @@
  * calculate_ray_distance - a function to calculate the distance to the wall
  * @current_angle: The current angle of the ray
  * @player: The player position
- * @mazeWidth: The width of the maze
- * @mazeHeight: The height of the maze
+ * @maze_width: The width of the maze
+ * @maze_height: The height of the maze
  * @mazeCellSize: The size of the maze cell
  * @rayDistance: The distance to the wall
  * @hitX: The x position of the hit
@@ -13,7 +13,7 @@
  * Return: Nothing
  */
 void calculate_ray_distance(float current_angle, SDL_Rect player,
-			    int mazeWidth, int mazeHeight,
+			    int maze_width, int maze_height,
 			    int mazeCellSize, float *rayDistance,
 			    float *hitX, float *hitY, int *hitSide)
 {

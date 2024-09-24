@@ -8,12 +8,12 @@ float ray_angle_increment = 0.1f;
  * ray_casting - a function that handles ray casting
  * @renderer: The renderer
  * @player: The player
- * @mazeWidth: The width of the maze
- * @mazeHeight: The height of the maze
+ * @maze_width: The width of the maze
+ * @maze_height: The height of the maze
  * @mazeCellSize: The size of the maze cell
  * Return: the angle of the ray
  */
-float ray_casting(SDL_Renderer *renderer, SDL_Rect player, int mazeWidth, int mazeHeight, int mazeCellSize, SDL_Texture *wall_texture)
+float ray_casting(SDL_Renderer *renderer, SDL_Rect player, int maze_width, int maze_height, int mazeCellSize, SDL_Texture *wall_texture)
 {
     const Uint8 *keystates = SDL_GetKeyboardState(NULL);
     float fov = 60.0f * (3.14159f / 180.0f);  // Field of view in radians
@@ -34,7 +34,7 @@ float ray_casting(SDL_Renderer *renderer, SDL_Rect player, int mazeWidth, int ma
         int hitSide;
 
         // Calculate the distance to the wall and where it was hit
-        calculate_ray_distance(current_angle, player, mazeWidth, mazeHeight, mazeCellSize, &rayDistance, &hitX, &hitY, &hitSide);
+        calculate_ray_distance(current_angle, player, maze_width, maze_height, mazeCellSize, &rayDistance, &hitX, &hitY, &hitSide);
 
         // Avoid division by zero and set a minimum value for the ray
         if (rayDistance < 1.0f)
@@ -58,5 +58,5 @@ float ray_casting(SDL_Renderer *renderer, SDL_Rect player, int mazeWidth, int ma
     return ray_angle;
 }
 	//
-	// floor_distance = calculate_floor_distance(rayDistance, player, hitY, mazeHeight, mazeCellSize);
+	// floor_distance = calculate_floor_distance(rayDistance, player, hitY, maze_height, mazeCellSize);
  //        floor_distances[i] = floor_distance;

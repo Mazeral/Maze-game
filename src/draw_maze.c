@@ -17,16 +17,16 @@ void draw_maze(SDL_Renderer *renderer, SDL_Rect player)
 	int x, y;
 
 	/* Draw the maze */
-	for (y = 0; y < mazeHeight; y++)
+	for (y = 0; y < MAZE_HEIGHT; y++)
 	{
-		for (x = 0; x < mazeWidth; x++)
+		for (x = 0; x < MAZE_WIDTH; x++)
 		{
 			if (maze[y][x] == 1)
 			{
-				wall.x = x * mazeCellSize;
-				wall.y = y * mazeCellSize;
-				wall.w = mazeCellSize;
-				wall.h = mazeCellSize;
+				wall.x = x * MAZE_CELL_SIZE;
+				wall.y = y * MAZE_CELL_SIZE;
+				wall.w = MAZE_CELL_SIZE;
+				wall.h = MAZE_CELL_SIZE;
 
 				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 				SDL_RenderFillRect(renderer, &wall);

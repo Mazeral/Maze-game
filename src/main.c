@@ -5,8 +5,6 @@
 #include <SDL2/SDL_keyboard.h>
 #include <SDL2/SDL_render.h>
 
-float floor_scroll_offset_x = 0.0f;
-float floor_scroll_offset_y = 0.0f;
 
 /**
  * init_sdl - Initializes SDL and creates window and renderer
@@ -75,7 +73,7 @@ void game_loop(SDL_Renderer *renderer, SDL_Rect *player,
 		draw_sky(renderer, sky);
 		draw_floor(renderer, floor, *player);
 		ray_angle = ray_casting(renderer, *player,
-			mazeWidth, mazeHeight, mazeCellSize, wall_texture);
+			MAZE_WIDTH, MAZE_HEIGHT, MAZE_CELL_SIZE, wall_texture);
 		move(player, playerSpeed, ray_angle);
 		SDL_RenderPresent(renderer);
 		SDL_Delay(1000 / 60);
@@ -93,6 +91,8 @@ void game_loop(SDL_Renderer *renderer, SDL_Rect *player,
  */
 int main(void)
 {
+	float floor_scroll_offset_x = 0.0f;
+	float floor_scroll_offset_y = 0.0f;
 	SDL_Window *window = NULL;
 	SDL_Renderer *renderer = NULL;
 	SDL_Texture *sky = NULL;
