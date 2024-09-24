@@ -45,7 +45,6 @@ void calculate_ray_distance(float current_angle, SDL_Rect player,
  * ray_casting - Handles the ray casting for rendering walls.
  * @renderer: The SDL_Renderer used for drawing.
  * @player: The SDL_Rect representing the player position.
- * @mazeCellSize: The size of each maze cell.
  * @wall_texture: The texture to use for the walls.
  * @ray_angle: The angle of the rays
  * Return: The updated angle of the ray after processing input.
