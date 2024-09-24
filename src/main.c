@@ -78,7 +78,7 @@ void game_loop(SDL_Renderer *renderer, SDL_Rect *player,
 		move(player, playerSpeed, ray_angle);
 		SDL_RenderPresent(renderer);
 		SDL_Delay(1000 / 60);
-		if (!game_running(*player, keystates))
+		if (!game_running(player, keystates))
 		{
 			running = false;
 			game_won_screen(renderer);

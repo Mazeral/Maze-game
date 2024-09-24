@@ -63,7 +63,7 @@ float calculate_floor_distance(float current_angle, SDL_Rect player,
 		int maze_width, int maze_height, int mazeCellSize);
 void draw_ray(SDL_Renderer *renderer, SDL_Rect player,
 		float hitX, float hitY, float rayDistance);
-bool game_running(SDL_Rect player, const Uint8 *keystates);
+bool game_running(SDL_Rect *player, const Uint8 *keystates);
 void welcome_screen(SDL_Renderer *renderer);
 void game_won_screen(SDL_Renderer *renderer);
 float wrap_angle(float angle);
