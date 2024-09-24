@@ -9,6 +9,8 @@
  */
 bool isWall(int x, int y)
 {
+	const int maze[MAZE_WIDTH][MAZE_HEIGHT] = MAZE;
+
 	if (x >= 0 && x < MAZE_WIDTH && y >= 0 && y < MAZE_HEIGHT)
 	{
 		return (maze[y][x] == 1);

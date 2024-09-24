@@ -25,7 +25,7 @@ SDL_Rect create_text_rectangle(int width,
 }
 
 /**
- * render_text - Renders the given text on the screen.
+ * render_text2 - Renders the given text on the screen.
  * @renderer: The SDL renderer used for rendering the text.
  * @font: The font to be used for the text.
  * @text: The text to be rendered.
@@ -35,7 +35,7 @@ SDL_Rect create_text_rectangle(int width,
  *
  * Return: SDL_Texture containing the rendered text texture.
  */
-SDL_Texture *render_text(SDL_Renderer *renderer, TTF_Font *font,
+SDL_Texture *render_text2(SDL_Renderer *renderer, TTF_Font *font,
 			const char *text, SDL_Color text_color,
 			int window_width, int window_height)
 {
@@ -83,7 +83,7 @@ void game_won_screen(SDL_Renderer *renderer)
 	SDL_RenderFillRect(renderer, &text_rect);
 
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-	SDL_Texture *text_texture = render_text(renderer,
+	SDL_Texture *text_texture = render_text2(renderer,
 					 font, "You won!",
 					 text_color,
 					 WINDOW_WIDTH,

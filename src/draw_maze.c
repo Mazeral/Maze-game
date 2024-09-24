@@ -15,6 +15,7 @@ void draw_maze(SDL_Renderer *renderer, SDL_Rect player)
 	SDL_Rect wall;
 	SDL_Rect playerRect;
 	int x, y;
+	const int maze[MAZE_WIDTH][MAZE_HEIGHT] = MAZE;
 
 	/* Draw the maze */
 	for (y = 0; y < MAZE_HEIGHT; y++)

@@ -32,7 +32,7 @@ bool game_running(SDL_Rect player, const Uint8 *keystates)
 	}
 
 	/* Check if the player has reached the end of the map */
-	if (player.x >= 18 * mazeCellSize && player.y >= 18 * mazeCellSize)
+	if (player.x >= 18 * MAZE_CELL_SIZE && player.y >= 18 * MAZE_CELL_SIZE)
 	{
 		/* Game over, player has reached the end of the map */
 		return (false);

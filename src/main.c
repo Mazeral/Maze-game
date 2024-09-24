@@ -61,6 +61,7 @@ void game_loop(SDL_Renderer *renderer, SDL_Rect *player,
 	SDL_Event event;
 	const Uint8 *keystates = SDL_GetKeyboardState(NULL);
 	float ray_angle;
+	int playerSpeed = 3;
 
 	while (running)
 	{

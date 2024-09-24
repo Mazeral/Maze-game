@@ -35,7 +35,7 @@ void draw_white_rectangle(SDL_Renderer *renderer)
 }
 
 /**
- * render_text - Renders the welcome text and returns the SDL_Texture
+ * render_text1 - Renders the welcome text and returns the SDL_Texture
  * @renderer: The SDL renderer
  * @font: The loaded font
  * @text: The message to render
@@ -43,7 +43,7 @@ void draw_white_rectangle(SDL_Renderer *renderer)
  * @textSurface: Address of the SDL_Surface pointer for the text
  * Return: The SDL_Texture of the rendered text, or NULL on error
  */
-SDL_Texture *render_text(SDL_Renderer *renderer, TTF_Font *font,
+SDL_Texture *render_text1(SDL_Renderer *renderer, TTF_Font *font,
 			 const char *text,
 			SDL_Color textColor, SDL_Surface **textSurface)
 {
@@ -70,10 +70,10 @@ SDL_Texture *render_text(SDL_Renderer *renderer, TTF_Font *font,
 }
 
 /**
- * display_welcome_screen - Displays the welcome message on the screen
+ * welcome_screen - Displays the welcome message on the screen
  * @renderer: The SDL renderer to draw to
  */
-void display_welcome_screen(SDL_Renderer *renderer)
+void welcome_screen(SDL_Renderer *renderer)
 {
 	SDL_Surface *textSurface = NULL;
 	SDL_Texture *textTexture = NULL;
@@ -97,7 +97,7 @@ void display_welcome_screen(SDL_Renderer *renderer)
 		return;
 	}
 	/* Render the welcome text */
-	textTexture = render_text(renderer, font, "Welcome to the Maze Game!",
+	textTexture = render_text1(renderer, font, "Welcome to the Maze Game!",
 			   textColor, &textSurface);
 	if (textTexture == NULL)
 	{

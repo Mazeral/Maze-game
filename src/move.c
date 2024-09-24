@@ -12,7 +12,6 @@ void handleMovement(SDL_Rect *player, int playerSpeed,
 {
 	int mazeX = player->x / MAZE_CELL_SIZE;
 	int mazeY = player->y / MAZE_CELL_SIZE;
-
 	int newX = player->x;
 	int newY = player->y;
 
@@ -32,6 +31,7 @@ void handleMovement(SDL_Rect *player, int playerSpeed,
 
 	int newMazeX = newX / MAZE_CELL_SIZE;
 	int newMazeY = newY / MAZE_CELL_SIZE;
+	const int maze[MAZE_WIDTH][MAZE_HEIGHT] = MAZE;
 
 	if (!(newMazeY < 0 || newMazeX < 0 ||
 	      newMazeY >= MAZE_HEIGHT || newMazeX >= MAZE_WIDTH ||
@@ -50,6 +50,8 @@ void handleMovement(SDL_Rect *player, int playerSpeed,
  */
 bool isCollision(int mazeX, int mazeY)
 {
+	const int maze[MAZE_WIDTH][MAZE_HEIGHT] = MAZE;
+
 	return (mazeY < MAZE_HEIGHT && mazeX < MAZE_WIDTH && maze[mazeY][mazeX] == 1);
 }
 

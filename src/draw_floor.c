@@ -28,7 +28,7 @@ void draw_floor(SDL_Renderer *renderer,
 		current_angle = (i - NUM_RAYS / 2.0) * (3.14159f / 180.0f);
 
 		calculate_ray_distance(current_angle, player, MAZE_WIDTH, MAZE_HEIGHT,
-		mazeCellSize, &rayDistance, &hitX, &hitY, &hitSide);
+		MAZE_CELL_SIZE, &rayDistance, &hitX, &hitY, &hitSide);
 
 		/* Define the rectangle to render the floor texture */
 		floor_rect.x = i * WINDOW_WIDTH / NUM_RAYS;
