@@ -7,13 +7,13 @@
  * @keystates: Pointer to the state of the keyboard keys.
  * @ray_angle: The angle in which the player is facing and moving.
  */
-void handleMovement(SDL_Rect *player, int playerSpeed,
+void handleMovement(SDL_Rect player, int playerSpeed,
 		    const Uint8 *keystates, float ray_angle)
 {
-	int mazeX = player->x / MAZE_CELL_SIZE;
-	int mazeY = player->y / MAZE_CELL_SIZE;
-	int newX = player->x;
-	int newY = player->y;
+	int mazeX = player.x / MAZE_CELL_SIZE;
+	int mazeY = player.y / MAZE_CELL_SIZE;
+	int newX = player.x;
+	int newY = player.y;
 
 	if (keystates[SDL_SCANCODE_UP])
 	{
@@ -37,8 +37,8 @@ void handleMovement(SDL_Rect *player, int playerSpeed,
 	      newMazeY >= MAZE_HEIGHT || newMazeX >= MAZE_WIDTH ||
 	      maze[newMazeY][newMazeX] == 1))
 	{
-		player->x = newX;
-		player->y = newY;
+		player.x = newX;
+		player.y = newY;
 	}
 }
 
@@ -65,5 +65,5 @@ void move(SDL_Rect *player, int playerSpeed, float ray_angle)
 {
 	const Uint8 *keystates = SDL_GetKeyboardState(NULL);
 
-	handleMovement(player, playerSpeed, keystates, ray_angle);
+	handleMovement(*player, playerSpeed, keystates, ray_angle);
 }

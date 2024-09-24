@@ -56,9 +56,9 @@ void calculate_ray_distance(float current_angle, SDL_Rect player,
  */
 float ray_casting(SDL_Renderer *renderer, SDL_Rect player,
 		  int maze_width, int maze_height, int mazeCellSize,
-		  SDL_Texture *wall_texture)
+		  SDL_Texture *wall_texture, float ray_angle)
 {
-	float ray_angle = 0.0f, fov = 60.0f * (3.14159f / 180.0f),
+	float fov = 60.0f * (3.14159f / 180.0f),
 	ray_angle_increment = fov / NUM_RAYS,
 	initial_ray_angle = ray_angle - (fov / 2.0f),
 	floor_distance = 0.0f, floor_distances[NUM_RAYS], current_angle,

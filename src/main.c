@@ -74,11 +74,11 @@ void game_loop(SDL_Renderer *renderer, SDL_Rect *player,
 		draw_sky(renderer, sky);
 		draw_floor(renderer, floor, *player);
 		ray_angle = ray_casting(renderer, *player,
-			MAZE_WIDTH, MAZE_HEIGHT, MAZE_CELL_SIZE, wall_texture);
+			MAZE_WIDTH, MAZE_HEIGHT, MAZE_CELL_SIZE, wall_texture, ray_angle);
 		move(player, playerSpeed, ray_angle);
 		SDL_RenderPresent(renderer);
 		SDL_Delay(1000 / 60);
-		if (!game_running(player, keystates))
+		if (!game_running(*player, keystates))
 		{
 			running = false;
 			game_won_screen(renderer);
